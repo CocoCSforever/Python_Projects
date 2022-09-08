@@ -1,3 +1,2 @@
 print("Hello World!")
-print("YijiaMa")
-print("CS5001 Lab")
+print("Nice to meet you!")
