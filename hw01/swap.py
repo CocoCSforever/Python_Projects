@@ -9,7 +9,7 @@ word1=word2
 word2=temp
 
 # Print results.
-print() # prints blank line
+print () # prints blank line
 
 print("Swapping results")
 print("word #1:", word1)
