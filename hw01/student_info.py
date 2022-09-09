@@ -1,0 +1,5 @@
+print("Name: Yijia Ma")
+print("Birthday: November 21")
+print("Hobbies: Volleyball, Sleep")
+print("Favorite book: To live")
+print("Favorite movie: Avatar")
