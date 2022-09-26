@@ -1,0 +1,8 @@
+in_string = input("Please enter a string: ")
+low_in_string=in_string.lower()
+res=low_in_string.replace("a","A")
+res=res.replace("e","E")
+res=res.replace("i","I")
+res=res.replace("o","O")
+res=res.replace("u","U")
+print(res)
