@@ -2,7 +2,7 @@ import sys
 
 
 def main(height):
-    for row in range(1,height+1):
+    for row in range(1, height+1):
         print("*"*row)
 
 

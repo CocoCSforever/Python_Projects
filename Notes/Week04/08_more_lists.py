@@ -4,23 +4,23 @@ fruits = ["apple", "banana", "cranberry", "durian",
 
 print(fruits[1:5])
 
-#list comprehension
-#first character for each fruit in fruits
-first_letters=[fruit[0] for fruit in fruits]
+# list comprehension
+# first character for each fruit in fruits
+first_letters = [fruit[0] for fruit in fruits]
 
 print(first_letters)
 
-my_string ="Hi there, I'm a string"
+my_string = "Hi there, I'm a string"
 print(list(my_string))
 
-words=my_string.split(" ")
+words = my_string.split(" ")
 print(words)
 
-join_words='__'.join(words)
+join_words = '__'.join(words)
 
 print(join_words)
 
-my_num_string="123456"
+my_num_string = "123456"
 
 my_num_list = [int(element) for element in my_num_string]
 

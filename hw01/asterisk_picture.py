@@ -16,4 +16,6 @@ def draw_mytree():
     print("              * *             ")
     print("              * *             ")
     print("              ***             ")
+
+
 draw_mytree()
