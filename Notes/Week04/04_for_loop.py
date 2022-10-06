@@ -26,6 +26,8 @@ for i in range(HOW_HIGH_TO_COUNT):
 for i in range(1, HOW_HIGH_TO_COUNT, 2):
     print("Value:", i)
 
-
+# range(0,10)
 print(range(10))
+# if we want to print out the whole sequence, we should convert it into list
+#[0,1,2,3,4,5,6,7,8,9] enclosed by square brackets and it's a sequence of numbers
 print(list(range(10)))

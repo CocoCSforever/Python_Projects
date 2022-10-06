@@ -11,9 +11,9 @@ def main(height, width):
     # print a hollow rect
     for row in range(0, height):
         if (row == 0 or row == height-1 or width == 1):
-            print("*"*width)
+            print("*" * width)
         elif (width > 1):
-            print("*"+" "*(width-2)+"*")
+            print("*" + " " * (width-2) + "*")
 
 
 main(int(sys.argv[1]), int(sys.argv[2]))
