@@ -1,0 +1,23 @@
+1. True or False are possible values.
+2. George Boolean invented the field of symbolic logic. And Boolean Logic is developed by him to combine or exclude certain concepts when searching databases.
+3. Integer 1 is equivalent to True. But if we converting an int to a boolean, the boolean value is True for all integers except 0.
+4. Integer 0 is equivalent to False.
+5. True.
+//--------6--------//
+(a)True
+(b)True
+(c)False
+(d)True
+(e)False
+(f)True
+(g)True
+(h)False
+(i)False
+(j)True
+(k)True
+(l)False
+//--------7--------//
+a-f: True False False True False True
+g-l: False True True True False True
+m-r: False True True True False True
+s-z: False True True False False True True False
