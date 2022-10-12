@@ -2,6 +2,7 @@ import re
 
 
 def main():
+    # get user input of filename
     filename = input("Enter the file name: ")
     # read file and get a file object
     try:
@@ -23,7 +24,7 @@ def main():
         # remove whitespce for each line
         line_string = line.strip().replace(" ", "")
         char_count += len(line_string)
-        # re return a list of all matched "\w" char
+        # re return a list of all matched "\w" char in line_string
         alphanumeric_count += len(re.findall(r"\w", line_string))
 
     print(f"Words: {word_count}\nCharacters: {char_count} \

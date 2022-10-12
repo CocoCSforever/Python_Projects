@@ -26,4 +26,3 @@ elif (color == 'green'):
     print("I do not like these eggs and ham")
 else:
     print("I'm speechless")
-
