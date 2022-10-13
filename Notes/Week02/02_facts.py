@@ -20,6 +20,9 @@ print("672", "+", "5", "=", 672 + 5)
 
 print(1, "is the loneliest number")
 
+print("*"*5+"\n"+"*"*5)
+print("*"*5, "\n", "*"*5)
+
 print("The speed limit on the highway in France is", 130, "km/h")
 
 speed = 130
