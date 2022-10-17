@@ -22,7 +22,7 @@ while (num != user_guess):
     else:
         res="icy freezing miserably cold"
     tries+=1
-    user_guess=int(input(f"You guessed {user_guess}\nYour guess is {res}\n"))
+    user_guess=int(input(f"You guessed {user_guess}\nYour guess is" +res\n))
 
 if(tries==1):
     com="That was lucky!"

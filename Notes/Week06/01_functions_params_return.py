@@ -80,22 +80,5 @@ def is_prime(num):
     return True
 
 
-# Correct:
-i, submitted, x, y, a, b = 0
-i = i + 1
-submitted += 1
-x = x*2 - 1
-hypot2 = x*x + y*y
-c = (a+b) * (a-b)
-
-c = (a+b) * (a-b) + (a+b)*(a-b)
-
-# Wrong:
-i = i+1
-submitted += 1
-x = x * 2 - 1
-hypot2 = x * x + y * y
-c = (a + b) * (a - b)
-
 if __name__ == "__main__":
     main()

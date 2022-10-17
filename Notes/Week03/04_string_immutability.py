@@ -23,9 +23,9 @@ print(f"Mutation 4 is {len(mutation4)} characters long.")
 
 print(f"Original phrase: {phrase}")
 
-print(phrase[0])
-
 # phrase[0] = 'Z'
+
+print(phrase[0])
 
 phrase = "Zhange is inevitable"
 

@@ -37,7 +37,7 @@ num_plus_5_too = map(
 )
 print(list(num_plus_5_too))
 
-# use lambda x: not fns.is_prime to filter False
+# use "lambda x: not fns.is_prime" to filter False
 # direct expression "not fns.is_prime" is a boolean object and not callable
 primes = filter(
     fns.is_prime,

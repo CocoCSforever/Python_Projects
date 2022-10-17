@@ -29,8 +29,8 @@ def main(files):
         title = f.readline().strip()
         # eliminate "By", the first word in the author line
         author = ' '.join(f.readline().strip().split()[1:])
-        # print("Title: ", title)
-        # print("Author: ", author)
+        print("Title: ", title)
+        print("Author: ", author)
 
         line_count = 0
         for _line in f:
