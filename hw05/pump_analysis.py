@@ -46,6 +46,7 @@ def main():
         # but to align with the result
         # I change the threshold to 900 and then to 100
         if (watt > 500):
+            # To align with the example result:
             # assume that if the watt is less than 500, it's noisy value
             # watt > 500 means pump is operating
             continued_minutes += 1
