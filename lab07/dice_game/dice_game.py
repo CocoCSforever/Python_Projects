@@ -12,7 +12,6 @@ If you roll anything else, that's your 'point', and
 you keep rolling until you either roll your point
 again (win) or roll a 7 (lose)
 """)
-    input("Press enter to roll the dice...\n")
     gc.start_play()
 
 

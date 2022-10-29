@@ -11,10 +11,11 @@ class GameController:
         self.point = -1
 
     def start_play(self):
-        self.roll()
+        self.roll_or_not()
         self.first_result()
 
-    def roll(self):
+    def roll_or_not(self):
+        input("Press enter to roll the dice...\n")
         self.pair_of_dice.roll_dice()
 
     def first_result(self):
@@ -31,8 +32,7 @@ class GameController:
             self.continue_roll()
 
     def continue_roll(self):
-        input("Press enter to roll the dice...\n")
-        self.roll()
+        self.roll_or_not()
         if (self.pair_of_dice.current_value() == 7):
             print(f"You rolled {self.pair_of_dice.current_value()}. You lose.")
         elif (self.pair_of_dice.current_value() == self.point):

@@ -77,4 +77,3 @@ def draw_blade(stroke_color, fill_color):
 
 
 main()
-

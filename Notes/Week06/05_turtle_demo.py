@@ -16,7 +16,7 @@ t.pensize(5)
 t.pencolor("red")
 t.fillcolor("yellow")
 
-t.pd()  # pendown
+t.pd()  # pendown, unnecessary
 t.begin_fill()
 t.forward(200)
 t.left(90)

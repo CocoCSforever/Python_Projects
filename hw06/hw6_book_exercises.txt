@@ -1,0 +1,13 @@
+1. Yes. The second proc is redefining the function.
+2. Yes. 
+3. Yes. When proc doesn't have a return value, we assign None to x in main.
+4. Yes.
+5. No. missing one argument
+6. No. Given two arguments when only one argument required.
+7. Yes.
+8. It prints 10 instead because we did't change the value of num.
+The value of num passed to proc function and didn't get any return value assigned to num or a new variable.
+9. Legal. x in proc is formal parameter and it's local to the function proc. When we call the proc(x), we pass the value
+of actual parameter x in main(which is 10) to the corresponding formal parameter x in proc.
+10. Legal. The x in proc is formal parameter and y in main is actual parameter. The name of formal parameter
+is irrelevant because we are passing the value of actual parameter to the formal parameter
