@@ -9,6 +9,8 @@ my_fruit_counter = {
 # we can have different type of keys in the same dictionary
 # such as 20: "pear", but we cannot sort such dictionary
 my_fruit_counter["banana"] += 1
+for i in my_fruit_counter.items():
+    print(i)
 print(my_fruit_counter)
 print(my_fruit_counter.items())
 # dict_items([('banana', 7), ('fig', 1), ('orange', 10), ('kumquat', 5)])

@@ -17,7 +17,7 @@ def main():
     #     # for line will read the empty line in the middle
     #     # but won't read the last trailing new line
     #     list.append(line.strip().split(','))
-
+    print(" ggasfih asfaf  asfasfh ".split())
     print(f.readline().strip())
     print(f.readline().strip())
     print(f.readline().strip())  # print('')
