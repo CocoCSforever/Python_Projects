@@ -12,3 +12,4 @@ my_string = re.sub(r".*([0-9]+)([a-z]+).*", r"Matched \1 then \2", my_string)
 # (\w+\.?)+@(\w+\.?)+
 # .+@(\w+\.?)+    safi@gmail
 # .+@(\w+\.+)+\w+
+# .+@(\w+\.)+\w+

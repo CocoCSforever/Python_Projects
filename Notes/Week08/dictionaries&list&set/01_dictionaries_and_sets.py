@@ -1,3 +1,4 @@
+print("------------Dictionary-------------")
 my_empty_dictionary = {}
 
 my_fruit_counter = {
@@ -9,20 +10,35 @@ my_fruit_counter = {
 # we can have different type of keys in the same dictionary
 # such as 20: "pear", but we cannot sort such dictionary
 my_fruit_counter["banana"] += 1
+print("---------------------")
+print("Items in Dictionary:")
 for i in my_fruit_counter.items():
     print(i)
+
+print("---------------------")
+print("my_fruit_counter:")
 print(my_fruit_counter)
+
+print("---------------------")
+print("my_fruit_counter.items():")
 print(my_fruit_counter.items())
 # dict_items([('banana', 7), ('fig', 1), ('orange', 10), ('kumquat', 5)])
 # a tuple of two items in a pair
+print("---------------------")
+print("my_fruit_counter.keys():")
 print(my_fruit_counter.keys())
 # dict_keys(['banana', 'fig', 'orange', 'kumquat'])
 # sth like a list, can be converted to a list
+print("---------------------")
+print("my_fruit_counter.values():")
 print(my_fruit_counter.values())
 # dict_values([7, 1, 10, 5])
-
+print("---------------------")
+print("my_fruit_counter[\"orange\"]:")
 print(my_fruit_counter["orange"])  # value for the key orange
+print("----------------------------------\n")
 
+print("----------Sort List&Dictionary-----------")
 my_list = [5, 3, 2, 4]
 print(sorted(my_list))  # standard ordering for numbers: from smallest to larger
 print(sorted(my_list, reverse=True))
@@ -42,13 +58,13 @@ fruits_by_count = sorted(
     # key=second_element, only need to pass the name of the function
     reverse=True
 )
+print("Dictionary after sorted by count:")
 print(fruits_by_count)
-
 
 # TypeError: '<' not supported between instances of 'str' and 'int'
 # my_mixed_up_list = [5, "hello", ("mytuple", 3), 1, "a"]
 # print(sorted(my_mixed_up_list))
-
+print("----------------------------------")
 
 my_food_type = {
     "vegetables": [],
@@ -63,19 +79,27 @@ my_food_type["a new type"] = ("tuple1", "tuple2")
 my_food_type["vegetables"].append("celery")
 my_food_type["vegetables"].append("zucchini")
 my_food_type["vegetables"].append("carrot")
+print("my_food_type after adding new items:")
 print(my_food_type)
+
+print("---------------------")
+print("Items in my_food_type[\"vegetables\"]:")
 for food in my_food_type["vegetables"]:
     print(food)
 
+print("---------------------")
+print("Items in my_food_type:")
 for food_type in my_food_type.items():
     print(food_type)
 # should not assume any particular order in dictionary before
 # but now technically it has default ordering as the sequence of adding
 
+print("----------------------------------")
 # set is for immediate check whether one is in the collection
 # unordered but not really random
-my_fruit_set = {"banana", "fig", "apple"}
 
+print("--------------Set-----------------")
+my_fruit_set = {"banana", "fig", "apple"}
 my_empty_set = set()
 
 
@@ -92,4 +116,6 @@ my_fruit_set.add("berry")
 check_for_fruit("berry", my_fruit_set)
 my_fruit_set.add("fig")
 check_for_fruit("fig", my_fruit_set)
+print("Items in set:")
 print(my_fruit_set)
+print("----------------------------------")

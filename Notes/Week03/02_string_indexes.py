@@ -34,9 +34,3 @@ print(f"The last instance of 'o' appears at position {in_string.rfind('o')}")
 print(f"The first instance of 'ry' appears at position {in_string[7:-1].find('ry')}")
 
 print(f"The last instance of 'O' appears at position {in_string.rfind('O')}")
-
-
-
-
-
-
