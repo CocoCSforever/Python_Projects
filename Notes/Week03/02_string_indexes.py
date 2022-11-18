@@ -8,7 +8,7 @@ print(in_string[2])
 print(in_string[3])
 print(in_string[4])
 print(in_string[16])
-# print(in_string[17])
+print(in_string[17])
 
 print(in_string[len(in_string)-1])
 

@@ -7,7 +7,9 @@ def main():
     list = []
     command = input("Enter a number, or enter 'done': ")
     while (command != "done"):
-        list.append(triangular_number(int(command)))
+        res = triangular_number(int(command))
+        print(f"The triangular number for {int(command)} is {res}")
+        list.append(res)
         command = input("Enter a number, or enter 'done': ")
     print(list)
 

@@ -40,6 +40,8 @@ print(list_of_lists[1][-1][3])
 
 
 new_list = []
+# new_list.pop()  # IndexError: pop from empty list
+# new_list[-1]  # IndexError: list index out of range
 new_list.append("cheese")
 new_list.append("tomato")
 new_list.append("egg")
