@@ -29,17 +29,40 @@ class MineField():
         else:
             self.check_completion_status()
         if self.cells[x][y].near_bombs == 0:
-            # TODO: handle the case where an empty
-            # cell is revealed. Use a recursive function
-            # to do this
-            pass
+            # recover "covered" to True
+            # to keep the original condition of recursion
+            self.cells[x][y].covered = True
+            self.clear_neighbors_of_empty_cell(x, y)
+            self.check_completion_status()
 
-    def define_your_function_here():
-        pass
-        #  TODO: Define a recursive function to handle
-        #  clearing out all empty/numbered neighbors of an empty
-        #  cleared cell. Rewrite this dummy function with
-        #  a suitable name and arguments.
+    def clear_neighbors_of_empty_cell(self, x, y):
+        """
+        Reveal the current empty cell
+        Clear out all empty/numbered neighbors of an empty cell.
+        For empty neighbors, continue clearing. 
+        For numbered neighbors, reveal it and stop recursion on it"""
+        # to avoid duplicate checks and exceeding max recursive depth
+        # if covered is False, mean we have checked this cell
+        if (self.cells[x][y].covered is False):
+            return
+        # if covered is True, we reveal it by turning covered to False
+        self.cells[x][y].covered = False
+
+        # recursion for all neighbors
+        for xneighbor in self.neighbors:
+            for yneighbor in self.neighbors:
+                if not ((xneighbor == 0 and yneighbor == 0)
+                        or (x + xneighbor < 0)
+                        or (y + yneighbor < 0)
+                        or (x + xneighbor >= self.FIELD_SIZE)
+                        or (y + yneighbor >= self.FIELD_SIZE)
+                        ):
+                    # if the neighbor is an empty cell, continue recursion
+                    if self.cells[x+xneighbor][y+yneighbor].near_bombs == 0:
+                        self.clear_neighbors_of_empty_cell(x+xneighbor, y+yneighbor)
+                    else:
+                    # if the neighbor is an numbered cell, reveal it
+                        self.cells[x+xneighbor][y+yneighbor].covered = False
 
     def check_completion_status(self):
         """
