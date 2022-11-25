@@ -39,16 +39,27 @@ class WordLadder:
         If new_word is w2, return True"""
         ALPHABET_RANGE = 26
         for i in range(len(word)):
-            if (self.delete_letter(i, word, cur_s.copy())):
-                return True
             for j in range(ALPHABET_RANGE):
-                if (self.add_letter(i, j, word, cur_s.copy())):
+                if (self.add_letter(i, j, word, cur_s)):
                     return True
-                if (self.replace_letter(i, j, word, cur_s.copy())):
+                if (self.replace_letter(i, j, word, cur_s)) :
                     return True
-        for j in range(ALPHABET_RANGE):
-            if (self.add_letter(len(word), j, word, cur_s.copy())):
-                return True
+        
+        if len(word) > 1:
+            for i in range(len(word)):
+                if (self.delete_letter(i, word, cur_s)):
+                    return True
+        
+   
+        # for i in range(len(word)):
+        #     if (len(word) > 1 and self.delete_letter(i, word, cur_s.copy())):
+        #         return True
+        #     for j in range(ALPHABET_RANGE):
+        #         if (self.add_letter(i, j, word, cur_s.copy())):
+        #             return True
+        #         if (self.replace_letter(i, j, word, cur_s.copy())):
+        #             return True
+
 
     def add_letter(self, i, j, word, new_s):
         """Construct new_word by adding one char"""
@@ -70,6 +81,8 @@ class WordLadder:
         """Check whether new_word is an unchecked english word"""
         if new_word in self.wordlist[len(new_word)] and\
                 (new_word not in self.checked):
+            # only deep copy when necessary
+            new_s = new_s.copy()
             # update stack and queue
             new_s.push(new_word)
             self.checked.add(new_word)
