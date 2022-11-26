@@ -39,6 +39,8 @@ class Pacman(GameCharacter):
         arc(x, y, self.CHAR_WIDTH, self.CHAR_HEIGHT,
             radians(self.rot_begin + self.mouth_angle),
             radians(self.rot_end - self.mouth_angle))
+        # self.maze.eat_dots(x, y,
+                        #    self.CHAR_WIDTH, self.CHAR_HEIGHT)
 
     def update(self):
         """Carry out necessary updates for each frame before
@@ -82,8 +84,7 @@ class Pacman(GameCharacter):
         # Based on PacMan's location, PacMan should gobble
         # dots from a different list.
         # BEGIN CODE CHANGES
-        self.maze.eat_dots(self.x, self.y,
-                           self.CHAR_WIDTH, self.CHAR_HEIGHT)
+        self.maze.eat_dots(self.x, self.y)
         # END CODE CHANGES
 
     def control(self, keyCode):

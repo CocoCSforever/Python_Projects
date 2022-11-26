@@ -21,21 +21,21 @@ class Maze:
     # TODO:
     # PROBLEM 3: implement dot eating
     # BEGIN CODE CHANGES
-    def eat_dots(self, x, y, w, h):
+    def eat_dots(self, x, y):
         if x == self.LEFT_VERT or x == self.RIGHT_VERT\
          or y == self.TOP_HORIZ or y == self.BOTTOM_HORIZ:
             self.dots.eat(x, y)
-            if (x > self.WIDTH - w/2):
-                self.dots.eat(x - self.WIDTH, y)
+            # if (x > self.WIDTH - w/2):
+            #     self.dots.eat(x - self.WIDTH, y)
 
-            if (y > self.HEIGHT - h/2):
-                self.dots.eat(x, y - self.HEIGHT)
+            # if (y > self.HEIGHT - h/2):
+            #     self.dots.eat(x, y - self.HEIGHT)
 
-            if (x < w/2):
-                self.dots.eat(x + self.WIDTH, y)
+            # if (x < w/2):
+            #     self.dots.eat(x + self.WIDTH, y)
 
-            if (y < h/2):
-                self.dots.eat(x, y + self.HEIGHT)
+            # if (y < h/2):
+            #     self.dots.eat(x, y + self.HEIGHT)
     # END CODE CHANGES
 
     def update(self):

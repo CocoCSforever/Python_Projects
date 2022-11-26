@@ -23,11 +23,11 @@ def test_eat_dots():
              150, 450, g)
     ds = m.dots
     dl = ds.dots_left()
-    m.eat_dots(150, 450, 100, 100)
+    m.eat_dots(150, 450)
     assert ds.bottom_row[2].x == ds.SPACING*3
     assert ds.left_col[6].y == ds.SPACING*7
     assert ds.dots_left() == dl - 2
-    m.eat_dots(25, 450, 100, 100)
+    m.eat_dots(25, 450)
     assert ds.bottom_row[0].x == ds.SPACING*1
     assert len(ds.bottom_row) == 6
     assert ds.dots_left() == dl - 4

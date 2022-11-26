@@ -42,15 +42,20 @@ class WordLadder:
             for j in range(ALPHABET_RANGE):
                 if (self.add_letter(i, j, word, cur_s)):
                     return True
-                if (self.replace_letter(i, j, word, cur_s)) :
+                if (self.replace_letter(i, j, word, cur_s)):
                     return True
-        
+        # add letter to the end of the word
+        # Test: ocean earth
+        # Ladder:  ocean  octan  octad  ectad  ecad  ead  eat  eath  earth
+        for j in range(ALPHABET_RANGE):
+            if (self.add_letter(len(word), j, word, cur_s)):
+                return True
+
         if len(word) > 1:
             for i in range(len(word)):
                 if (self.delete_letter(i, word, cur_s)):
                     return True
-        
-   
+
         # for i in range(len(word)):
         #     if (len(word) > 1 and self.delete_letter(i, word, cur_s.copy())):
         #         return True
@@ -60,7 +65,6 @@ class WordLadder:
         #         if (self.replace_letter(i, j, word, cur_s.copy())):
         #             return True
 
-
     def add_letter(self, i, j, word, new_s):
         """Construct new_word by adding one char"""
         new_word = word[:i] + chr(ord('a')+j) + word[i:]
@@ -69,8 +73,8 @@ class WordLadder:
     def delete_letter(self, i, word, new_s):
         """Construct new_word by deleting one char"""
         new_word = word[:i] + word[i+1:]
-        if (new_word != ''):
-            return self.check_new_word(new_word, new_s)
+        # if (new_word != ''):
+        return self.check_new_word(new_word, new_s)
 
     def replace_letter(self, i, j, word, new_s):
         """construct new_word by replacing one char"""
