@@ -20,6 +20,8 @@ class GameController():
         draw a tile at appropriate positions on the board
         """
         self.board.draw(x, y)
+        if self.game_over:
+            self.display_end_text()
 
     def end_game(self, win_or_lose):
         """
@@ -27,8 +29,6 @@ class GameController():
         """
         if not self.game_over:
             self.game_over = win_or_lose
-        if self.game_over:
-            self.display_end_text()
 
     def display_end_text(self):
         """Announce the winner and tiles"""
@@ -42,6 +42,7 @@ class GameController():
             message = "Black and White end in a draw each with " +\
                       str(self.board.white) + " tiles!"
         print(message)
+        self.game_over = None
         center = self.board.BOARD_SIZE*self.board.CELL_SIZE/2
         offset = 3
         textAlign(CENTER)
