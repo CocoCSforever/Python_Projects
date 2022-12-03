@@ -20,12 +20,6 @@ class GameController():
         draw a tile at appropriate positions on the board
         """
         self.board.draw(x, y)
-        # if we click any cell after game is over, and want the message to 
-        # show again, then we put the following codes here instead of end_game()
-        # if self.game_over:
-        #     self.display_end_text()
-        # and add check_completion_status() to board.update()
-        # instead of board.draw()
 
     def end_game(self, win_or_lose):
         """
@@ -48,7 +42,6 @@ class GameController():
             message = "Black and White end in a draw each with " +\
                       str(self.board.white) + " tiles!"
         print(message)
-        self.game_over = None
         center = self.board.BOARD_SIZE*self.board.CELL_SIZE/2
         offset = 3
         textAlign(CENTER)

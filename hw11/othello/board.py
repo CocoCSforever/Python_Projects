@@ -40,7 +40,6 @@ class Board():
         """
         Carry out cell and tile display
         """
-        # Nothing to do at this stage, keep it in case needed later
         pass
 
     def draw(self, x, y):
