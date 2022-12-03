@@ -87,8 +87,8 @@ class Pinky(GameCharacter):
             self.y_add = 0
 
         # Move Pinky
-        self.x = self.x + self.x_add
-        self.y = self.y + self.y_add
+        # self.x = self.x + self.x_add
+        # self.y = self.y + self.y_add
 
     def update_eyes(self, up_down_part, left_right_part):
         """Set self.looking value based on position of Pinky w/r/t Pacman"""

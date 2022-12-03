@@ -60,6 +60,28 @@ class Dots:
                 if abs(i.y-y) < self.EAT_DIST\
                  or abs(i.y-y) > self.HEIGHT - self.EAT_DIST:
                     self.right_col.remove(i)
+    # def eat(self, x, y):
+    #     if y == self.TH:
+    #         for i in self.top_row:
+    #             if abs(i.x-x) < self.EAT_DIST\
+    #              or abs(i.x-x) > self.WIDTH - self.EAT_DIST:
+    #                 self.top_row.remove(i)
+    #     elif y == self.BH:
+    #         for i in self.bottom_row:
+    #             if abs(i.x-x) < self.EAT_DIST\
+    #              or abs(i.x-x) > self.WIDTH - self.EAT_DIST:
+    #                 self.bottom_row.remove(i)
+
+    #     if x == self.LV:
+    #         for i in self.left_col:
+    #             if abs(i.y-y) <= self.EAT_DIST\
+    #              or abs(i.y-y) > self.HEIGHT - self.EAT_DIST:
+    #                 self.left_col.remove(i)
+    #     elif x == self.RV:
+    #         for i in self.right_col:
+    #             if abs(i.y-y) < self.EAT_DIST\
+    #              or abs(i.y-y) > self.HEIGHT - self.EAT_DIST:
+    #                 self.right_col.remove(i)
     # END CODE CHANGES
 
     def dots_left(self):
