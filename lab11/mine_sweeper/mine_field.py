@@ -29,9 +29,6 @@ class MineField():
         else:
             self.check_completion_status()
         if self.cells[x][y].near_bombs == 0:
-            # recover "covered" to True
-            # to keep the original condition of recursion
-            self.cells[x][y].covered = True
             self.clear_neighbors_of_empty_cell(x, y)
             self.check_completion_status()
 
@@ -41,28 +38,21 @@ class MineField():
         Clear out all empty/numbered neighbors of an empty cell.
         For empty neighbors, continue clearing. 
         For numbered neighbors, reveal it and stop recursion on it"""
-        # to avoid duplicate checks and exceeding max recursive depth
-        # if covered is False, mean we have checked this cell
-        if (self.cells[x][y].covered is False):
-            return
-        # if covered is True, we reveal it by turning covered to False
-        self.cells[x][y].covered = False
-
         # recursion for all neighbors
+        # if the neighbor is an empty cell, continue check
+        # if(self.cells[x][y].near_bombs == 0):
         for xneighbor in self.neighbors:
             for yneighbor in self.neighbors:
-                if not ((xneighbor == 0 and yneighbor == 0)
-                        or (x + xneighbor < 0)
-                        or (y + yneighbor < 0)
-                        or (x + xneighbor >= self.FIELD_SIZE)
-                        or (y + yneighbor >= self.FIELD_SIZE)
-                        ):
-                    # if the neighbor is an empty cell, continue recursion
-                    if self.cells[x+xneighbor][y+yneighbor].near_bombs == 0:
-                        self.clear_neighbors_of_empty_cell(x+xneighbor, y+yneighbor)
-                    else:
-                    # if the neighbor is an numbered cell, reveal it
+                if not (xneighbor == 0 and yneighbor == 0)\
+                and (x + xneighbor) in range(0, self.FIELD_SIZE)\
+                and (y + yneighbor) in range(0, self.FIELD_SIZE):
+                    # to avoid duplicate checks and exceeding max recursive depth
+                    # if covered is False, mean we have checked this cell
+                    # if covered is True, we reveal it by turning covered to False
+                    if self.cells[x+xneighbor][y+yneighbor].covered:
                         self.cells[x+xneighbor][y+yneighbor].covered = False
+                        if(self.cells[x+xneighbor][y+yneighbor].near_bombs == 0):
+                            self.clear_neighbors_of_empty_cell(x+xneighbor, y+yneighbor)       
 
     def check_completion_status(self):
         """
