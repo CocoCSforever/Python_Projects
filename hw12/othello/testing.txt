@@ -1,0 +1,101 @@
+1. game_controller_test.py
+def test_constructor():
+    CELL_SIZE = 100
+    BOARD_SIZE = 4
+    textFont = None  # dummy value for font
+    board = BOARD(CELL_SIZE, BOARD_SIZE)
+    game_controller = GameController(board, textFont)
+    assert (not game_controller.game_over and
+            game_controller.board is board)
+
+def test_end_game():
+    CELL_SIZE = 100
+    BOARD_SIZE = 4
+    textFont = None  # dummy value for font
+    board = BOARD(CELL_SIZE, BOARD_SIZE)
+    game_controller = GameController(board, textFont)
+    assert (not game_controller.game_over)
+    game_controller.end_game('white')
+    assert(game_controller.game_over == 'white')
+    
+    game_controller = GameController(board, textFont)
+    game_controller.end_game('black')
+    assert(game_controller.game_over == 'black')
+    
+    game_controller = GameController(board, textFont)
+    game_controller.end_game('win_win')
+    assert(game_controller.game_over == 'win_win')
+
+2. board_test.py
+def test_constructor():
+    CELL_SIZE = 100
+    BOARD_SIZE = 4
+    board = BOARD(CELL_SIZE, BOARD_SIZE)
+    assert all attributes == default value
+    center = self.BOARD_SIZE/2
+    also test setup here: board.cells[center-1][center-1].tile is True, tile_color == its.WHITE
+def test_draw():
+    CELL_SIZE = 100
+    BOARD_SIZE = 4
+    board = BOARD(CELL_SIZE, BOARD_SIZE)
+    center = self.BOARD_SIZE/2
+    board.draw(center-1, center-1)
+    assert board.current_player is False(means didn't draw)
+    board.draw(center-1, center-2)
+    assert board.current_player is True
+
+def test_check_legal():
+    CELL_SIZE = 100
+    BOARD_SIZE = 4
+    board = BOARD(CELL_SIZE, BOARD_SIZE)
+    center = self.BOARD_SIZE/2
+    assert check_legal(center-1, center-2) is True
+    board.draw(center-1, center-2)
+    assert check_legal(center-2, center-1) is False
+    assert check_legal(center, center-2) is True
+    assert check_legal(center-2, center-2) is True
+    assert check_legal(center-2, center) is True
+
+def test_flip_tiles():
+    CELL_SIZE = 100
+    BOARD_SIZE = 4
+    board = BOARD(CELL_SIZE, BOARD_SIZE)
+    center = self.BOARD_SIZE/2
+    board.draw(center-1, center-2)
+    flip_tiles(center-1, center-2)
+    assert board.cells[center-1, center-1].tile_color = its.BLACK
+    board.draw(center, center-2)
+    flip_tiles(center, center-2)
+    assert board.cells[center, center-1].tile_color = its.WHITE
+
+def test_check_completion_status()
+    CELL_SIZE = 100
+    BOARD_SIZE = 4
+    textFont = None
+    board = BOARD(CELL_SIZE, BOARD_SIZE)
+    game_controller = GameController(board, textFont)
+    board.check_completion_status()
+    assert board.gc.game_over is False
+    board.tiles = 0
+    board.check_completion_status()
+    assert board.gc.game_over == 'win_win'
+    board.tiles = 0
+    board.white = 10
+    assert board.gc.game_over == 'white'
+
+3. board_cell_test.py
+def test_constructor():
+    CELL_SIZE = 100
+    x, y = 2, 2
+    cell = BoardCell(x, y, CELL_SIZE)
+    assert attributes == default value(*tile/tile.color)
+
+def test_draw():
+    CELL_SIZE = 100
+    x, y = 2, 2
+    cell = BoardCell(x, y, CELL_SIZE)
+    cell.draw(True)
+    assert cell.tile_color == cell.white
+    assert cell.tile is True
+    cell.draw(False)
+    assert cell.tile_color == cell.BLACK

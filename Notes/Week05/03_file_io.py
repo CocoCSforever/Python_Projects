@@ -44,6 +44,8 @@ def main(files):
 
     # write in the file, if the file already exists, it will overwrite it
     # out.write("Hello output again!")
+    # out.seek(0)
+    # out.write("append")
     # print(files)
 
 
