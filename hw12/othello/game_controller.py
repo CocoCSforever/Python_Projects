@@ -2,11 +2,10 @@ class GameController():
     """
     The Game Controller
     """
-    def __init__(self, board, wordsFont, gm, player):
+    def __init__(self, board, wordsFont, player):
         self.board = board
         self.game_over = False
         self.wordsFont = wordsFont
-        self.gm = gm
         self.player = player
         board.gc = self
 
@@ -47,14 +46,6 @@ class GameController():
         self.update_scores()
         self.game_over = None
         self.board.display = message
-        # center = self.board.BOARD_SIZE*self.board.CELL_SIZE/2
-        # offset = 3
-        # textAlign(CENTER)
-        # textFont(self.wordsFont)
-        # fill(0)
-        # text(message, center+offset, center+offset)
-        # fill(255)
-        # text(message, center, center)
 
     def update_scores(self):
         score = self.board.black
@@ -65,8 +56,7 @@ class GameController():
             print("Can't open scores.txt for writing.")
             return
 
-        line = out.readline()
-        # .strip()
+        line = out.readline().strip()
         print(line)
         if line:
             score_break = line.rfind(' ')
@@ -77,4 +67,3 @@ class GameController():
             else:
                 out.seek(0, 2)
         out.write(self.player + " " + str(score) + "\n")
-        # out.close()

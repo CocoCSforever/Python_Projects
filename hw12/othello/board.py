@@ -138,11 +138,7 @@ class Board():
         for x in range(self.BOARD_SIZE):
             for y in range(self.BOARD_SIZE):
                 if self.cells[x][y].tile is False:
-                    # if self.current_player:
-                    #     self.computer_legal_moves = set()
                     self.check_legal(x, y, self.WHITE, 0)
-                    # else:
-                    #     self.player_legal_moves = set()
                     self.check_legal(x, y, self.BLACK, 1)
 
     def check_legal(self, x, y, cur_color, index):

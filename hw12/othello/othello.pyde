@@ -6,7 +6,6 @@ def setup():
     global gc
     from board import Board
     from game_controller import GameController
-    from game_manager import GameManager
 
     answer = input('enter your name')
     if answer:
@@ -29,8 +28,7 @@ def setup():
     wordsFont = createFont("BadaboomBB_Reg.otf", 20)
 
     board = Board(CELL_SIZE, BOARD_SIZE, wordsFont)
-    gm = GameManager(board)
-    gc = GameController(board, wordsFont, gm, answer)
+    gc = GameController(board, wordsFont, answer)
 
 
 def draw():
