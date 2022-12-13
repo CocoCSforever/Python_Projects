@@ -27,6 +27,12 @@ def test_constructor():
     assert bc.CELL_SIZE == CELL_SIZE
 
 
+def test_draw():
+    """It calls setup_tile(tested below)
+    and a graphical function draw_self"""
+    pass
+
+
 def test_setup_tile():
     CELL_SIZE = 100
     bc = BoardCell(CELL_SIZE, CELL_SIZE, CELL_SIZE)
@@ -39,3 +45,8 @@ def test_setup_tile():
     assert bc_2.tile is True
     bc.setup_tile(False)
     assert bc.tile_color == bc.BLACK
+
+
+def test_draw_self():
+    """draw_self is a graphical function"""
+    pass

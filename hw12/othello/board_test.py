@@ -39,6 +39,14 @@ def test_constructor():
         assert board.cells[x][3].tile is False
 
 
+def test_update():
+    """calls three graphical function:
+    self.cells[x][y].draw_self()
+    self.display_message()
+    self.display_turn()"""
+    pass
+
+
 def test_draw():
     CELL_SIZE = 100
     BOARD_SIZE = 8
@@ -57,7 +65,6 @@ def test_draw():
     assert board.cells[3][5].tile is True
     assert board.cells[3][5].tile_color == board.BLACK
     assert board.cells[3][4].tile_color == board.BLACK
-    print(board.list[0])
     board.computer_make_move()
     assert board.cells[4][6].tile is True
     assert board.cells[4][6].tile_color == board.WHITE
@@ -119,7 +126,26 @@ def test_draw_move():
 
 
 def test_flip():
-    pass
+    CELL_SIZE = 100
+    BOARD_SIZE = 8
+    board = Board(CELL_SIZE, BOARD_SIZE, None)
+    board.flip(3, 2, False)
+    assert board.cells[3][3].tile_color == board.BLACK
+    assert board.black == 3
+    assert board.white == 1
+    board.flip(2, 2, True)
+    assert board.cells[3][3].tile_color == board.WHITE
+    assert board.black == 2
+    assert board.white == 2
+    board.draw_move(4, 5)
+    board.flip(5, 5, True)
+    assert board.cells[4][4].tile_color == board.WHITE
+    assert board.black == 3
+    assert board.white == 2
+    board.flip(5, 4, False)
+    assert board.cells[4][4].tile_color == board.BLACK
+    assert board.black == 4
+    assert board.white == 1
 
 
 def test_flip_x_y():

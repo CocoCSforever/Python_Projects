@@ -25,5 +25,3 @@ class BoardCell():
             fill(*self.tile_color)
             ellipse(self.x+self.CELL_SIZE/2, self.y+self.CELL_SIZE/2,
                     self.PIXEL, self.PIXEL)
-            # ellipse(self.y+self.CELL_SIZE/2, self.x+self.CELL_SIZE/2,
-            #         self.PIXEL, self.PIXEL)

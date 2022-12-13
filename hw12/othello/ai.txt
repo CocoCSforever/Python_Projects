@@ -1,0 +1,44 @@
+1. Algorithm of my AI(pick random legal move)
+    a. board.generate_legal_moves would generate one set for computer and one set for human each time.
+    b. The set contains all the possible legal moves one can make. 
+    c. The legal moves are saved with tuple (x, y) to indicate the location
+    d. For computer's turn, I use set.pop() to pop one (x1, y1) from the legal moves.
+    e. It is not a real random algorithm, since the set use hash function to store element, so every time we
+    pop, we get a tuple (x, y) that has the smallest value under hash function instead of a real random one.
+2. I am able to accomplish task 1. But the limitation is, as I said, the legal moves with larger x and y
+are unlikely to be chosen by computer.
+3. Same as 1.
+4. Half-half because I and my friend are not fully understand the best stragety of the game and if we don't
+think to much for every step, computer will beat us.
+5. I think when I generate legal moves, I can calculate "total" to denote "potential flipped tiles", which means
+"if I pick this move, how many tiles can be flipped".
+    a.check_legal()
+        int total
+        for loop:
+            .....
+            f_tiles = self.check_neighbors_color(x + xneighbor, y + yneighbor,
+                                                 xneighbor, yneighbor, 0):
+            if f_tiles:
+                total += f_tiles
+                self.list[index].add((x, y))
+
+    b. check_neighbors_color(self, x, y, xd, yd, total)
+        .....
+            return False
+        elif self.cells[x+xd][y+yd].tile_color == self.cells[x][y].tile_color:
+            return self.check_neighbors_color(x+xd, y+yd, xd, yd, total+1)
+        # if meet a different color, return true
+        else:
+            return total
+
+And for each turn, I'll choose the move that has the largest potential flipped tiles.
+
+Limitation: It's not always the case that more tiles flipped, the better. Because if there is an opposite tiles
+at the very end, they can flip the line again.
+
+Example:  b for black, w for white
+1. b w b b b b
+if we put a w, then
+2. b w w w w w w
+but b can flip over again by putting another b
+3. b b b b b b b b

@@ -25,6 +25,7 @@ class Board():
         self.black = 2
         self.no_tile = BOARD_SIZE*BOARD_SIZE - 4
         self.display = None
+        # self.counter = 0
         self.setup()
 
     def setup(self):
@@ -42,11 +43,20 @@ class Board():
 
     def update(self):
         """
-        Carry out cell and tile display
+        Carry out display for:
+        tile, turn, end_message
         """
+        # Notes:
+        # Another way to implement delay:
+        # add self.counter = 100 to self.draw()
+        # if self.counter > 0:
+        #     self.counter -= 1
+        # if self.counter == 0 and self.current_player:
+        #     self.computer_make_move()
         for x in range(self.BOARD_SIZE):
             for y in range(self.BOARD_SIZE):
                 self.cells[x][y].draw_self()
+        self.display_turn(self.current_player)
         if self.display:
             self.display_message(self.display)
 

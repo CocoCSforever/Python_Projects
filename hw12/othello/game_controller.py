@@ -17,6 +17,7 @@ class GameController():
         self.board.update()
         if self.game_over:
             self.display_end_text()
+            self.update_scores()
 
     def draw(self, x, y):
         """
@@ -43,27 +44,31 @@ class GameController():
             message = "User and Computer end in a draw each with " +\
                       str(self.board.white) + " tiles!"
         print(message)
-        self.update_scores()
         self.game_over = None
         self.board.display = message
 
     def update_scores(self):
+        print("updating scores")
         score = self.board.black
         try:
-            out = open("scores.txt", "a+")
-            out.seek(0)
+            out = open("scores.txt", "r+")
         except OSError as e:
             print("Can't open scores.txt for writing.")
             return
 
-        line = out.readline().strip()
-        print(line)
+        content = out.read()
+        line_break = content.find('\n')
+        line = content[:line_break]
+        new_line = self.player + " " + str(score) + "\n"
+        print(new_line)
         if line:
             score_break = line.rfind(' ')
             highest_score = int(line[score_break+1:])
-            print("highest_score:", highest_score)
             if score > highest_score:
-                out.seek(0)
+                content = new_line + content
             else:
-                out.seek(0, 2)
-        out.write(self.player + " " + str(score) + "\n")
+                content = content + new_line
+        else:
+            content = new_line
+        out.seek(0)
+        out.write(content)
