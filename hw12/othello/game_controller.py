@@ -8,6 +8,7 @@ class GameController():
         self.wordsFont = wordsFont
         self.player = player
         board.gc = self
+        board.check_completion_status()
 
     def update(self):
         """
@@ -36,19 +37,19 @@ class GameController():
         """Announce the winner and tiles"""
         if self.game_over == 'white':
             message = "Computer wins with " +\
-                      str(self.board.white) + " tiles!"
+                      str(self.board.white) + " tiles!\n"
         elif self.game_over == 'black':
             message = "User wins with " +\
-                      str(self.board.black) + " tiles!"
+                      str(self.board.black) + " tiles!\n"
         else:
             message = "User and Computer end in a draw each with " +\
-                      str(self.board.white) + " tiles!"
+                      str(self.board.white) + " tiles!\n"
         print(message)
         self.game_over = None
         self.board.display = message
 
     def update_scores(self):
-        print("updating scores")
+        print("Updating scores:")
         score = self.board.black
         try:
             out = open("scores.txt", "r+")

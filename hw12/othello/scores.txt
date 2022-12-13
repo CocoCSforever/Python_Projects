@@ -1,0 +1,10 @@
+test_player8 43
+test_player6 42
+test_player1 41
+test_player2 31
+test_player3 21
+test_player4 29
+test_player5 38
+test_player7 42
+test_player9 2
+test_player10 18
