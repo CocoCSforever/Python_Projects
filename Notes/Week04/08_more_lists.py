@@ -3,6 +3,7 @@ fruits = ["apple", "banana", "cranberry", "durian",
 
 
 print(fruits[1:5])
+print(fruits[8:])  # []
 
 # list comprehension
 # first character for each fruit in fruits
