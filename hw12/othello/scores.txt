@@ -8,3 +8,4 @@ test_player5 38
 test_player7 42
 test_player9 2
 test_player10 18
+Yijia 31

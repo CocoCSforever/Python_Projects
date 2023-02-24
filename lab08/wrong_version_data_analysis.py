@@ -41,8 +41,9 @@ class DataAnalysis:
         # print(tlds_list)
         # print(language_list)
 
-        self.sort_list(self.top_lang_freqs)
-        print(id(self.top_lang_freqs))
+        # self.sort_list(self.top_lang_freqs)
+        self.top_lang_freqs = self.sort_list(self.top_lang_freqs)
+        # print(id(self.top_lang_freqs))
         # self.sort_list(self.top_country_tlds_freqs)
         self.top_lang_freqs = [(item, round(count/self.total, self.ROUND))
                                for (item, count) in self.top_lang_freqs]
@@ -61,9 +62,13 @@ class DataAnalysis:
             dict[x] = 1
 
     def sort_list(self, dict):
+        print(dict)
         print(id(dict))
         dict = sorted(dict.items(), key=lambda x: x[1], reverse=True)
+        print(dict)
         print(id(dict))
+        print("over")
+        return dict
 
     def top_n_lang_freqs(self, n):
         """
